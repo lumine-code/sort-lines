@@ -17,6 +17,11 @@
   "main": "./lib/sort-lines",
   "version": "1.0.0",
   "license": "MIT",
+  "files": [
+    "keymaps",
+    "lib",
+    "menus"
+  ],
   "engines": {
     "atom": ">=1.100.0 <2.0.0"
   },
@@ -35,7 +40,21 @@
       "sort-lines:unique"
     ]
   },
+  "scripts": {
+    "test": "lumine --test spec",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "dependencies": {
     "natural-orderby": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^18.2.2",
+    "globals": "^17.8.0",
+    "prettier": "^3.9.6"
   }
 }
