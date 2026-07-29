@@ -389,10 +389,10 @@ describe('sorting lines', () => {
       sortLinesNatural(() =>
         expect(editor.getText()).toBe(
           'a001 \n' +
-          'a002 \n' +
-          'a003 \n' +
           'a01  \n' +
-          'a02  \n'
+          'a002 \n' +
+          'a02  \n' +
+          'a003 \n'
         )
       )
     })

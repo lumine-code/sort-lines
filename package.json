@@ -36,7 +36,6 @@
     ]
   },
   "dependencies": {
-    "array-shuffle": "^1.0.1",
-    "javascript-natural-sort": "^0.7.1"
+    "natural-orderby": "^5.0.0"
   }
 }
