@@ -1,0 +1,5 @@
+{
+  "atom-text-editor:not([mini])": {
+    "f5": "sort-lines:sort"
+  }
+}

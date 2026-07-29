@@ -1,8 +1,28 @@
 {
   "name": "sort-lines",
+  "author": "lumine-code",
+  "description": "Sort, reverse, shuffle, and deduplicate text lines.",
+  "repository": "https://github.com/lumine-code/sort-lines",
+  "bugs": {
+    "url": "https://github.com/lumine-code/sort-lines/issues"
+  },
+  "keywords": [
+    "alphabetize",
+    "natural-order",
+    "deduplicate",
+    "shuffle",
+    "reverse",
+    "selection"
+  ],
   "main": "./lib/sort-lines",
-  "version": "0.19.0",
-  "description": "Sorts your lines. Never gets tired.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.100.0 <2.0.0"
+  },
+  "backgroundTips": [
+    "You can alphabetize selected text lines with {{ 'sort-lines:sort' | keystroke }}"
+  ],
   "activationCommands": {
     "atom-text-editor": [
       "sort-lines:sort",
@@ -14,11 +34,6 @@
       "sort-lines:reverse",
       "sort-lines:unique"
     ]
-  },
-  "repository": "https://github.com/atom/sort-lines",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.4.0 <2.0.0"
   },
   "dependencies": {
     "array-shuffle": "^1.0.1",
