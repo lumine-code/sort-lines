@@ -2,6 +2,9 @@ describe("sort-lines", () => {
   let editor;
 
   beforeEach(async () => {
+    // The commands are registered on atom-workspace, so an editor a dispatch is
+    // aimed at has to be inside the workspace rather than an orphan element.
+    jasmine.attachToDOM(atom.workspace.getElement());
     editor = await atom.workspace.open();
     const activation = atom.packages.activatePackage("sort-lines");
     atom.commands.dispatch(atom.views.getView(editor), "sort-lines:sort");
