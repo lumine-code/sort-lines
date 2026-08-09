@@ -20,7 +20,7 @@ To install `sort-lines` search for _sort-lines_ in the Install pane of the Lumin
 
 ## Commands
 
-Commands available in `atom-workspace`:
+Commands available in `lumine-workspace`:
 
 - `sort-lines:sort`: sort alphabetically,
 - `sort-lines:case-insensitive-sort`: sort alphabetically while ignoring case,

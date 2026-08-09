@@ -2,17 +2,17 @@ describe("sort-lines", () => {
   let editor;
 
   beforeEach(async () => {
-    // The commands are registered on atom-workspace, so an editor a dispatch is
+    // The commands are registered on lumine-workspace, so an editor a dispatch is
     // aimed at has to be inside the workspace rather than an orphan element.
-    jasmine.attachToDOM(atom.workspace.getElement());
-    editor = await atom.workspace.open();
-    const activation = atom.packages.activatePackage("sort-lines");
-    atom.commands.dispatch(atom.views.getView(editor), "sort-lines:sort");
+    jasmine.attachToDOM(lumine.workspace.getElement());
+    editor = await lumine.workspace.open();
+    const activation = lumine.packages.activatePackage("sort-lines");
+    lumine.commands.dispatch(lumine.views.getView(editor), "sort-lines:sort");
     await activation;
   });
 
   function dispatch(commandName, targetEditor = editor) {
-    atom.commands.dispatch(atom.views.getView(targetEditor), `sort-lines:${commandName}`);
+    lumine.commands.dispatch(lumine.views.getView(targetEditor), `sort-lines:${commandName}`);
   }
 
   function transform(commandName, text) {
@@ -116,7 +116,7 @@ describe("sort-lines", () => {
     });
 
     it("uses the editor receiving the command instead of the active editor", async () => {
-      const otherEditor = await atom.workspace.open();
+      const otherEditor = await lumine.workspace.open();
       editor.setText("c\na\nb");
       otherEditor.setText("z\ny\nx");
 
@@ -237,7 +237,7 @@ describe("sort-lines", () => {
 
   it("removes its commands when deactivated", async () => {
     editor.setText("c\na\nb");
-    await atom.packages.deactivatePackage("sort-lines");
+    await lumine.packages.deactivatePackage("sort-lines");
 
     dispatch("sort");
 

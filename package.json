@@ -29,7 +29,7 @@
     "You can alphabetize selected text lines with {{ 'sort-lines:sort' | keystroke }}"
   ],
   "activationCommands": {
-    "atom-text-editor": [
+    "lumine-text-editor": [
       "sort-lines:sort",
       "sort-lines:case-insensitive-sort",
       "sort-lines:natural",
