@@ -16,7 +16,7 @@ Commands operate on every non-empty selection, or on the entire buffer when noth
 
 ## Installation
 
-To install `sort-lines` search for _sort-lines_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/sort-lines`.
+To install `sort-lines` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/sort-lines`.
 
 ## Commands
 
