@@ -28,18 +28,6 @@
   "backgroundTips": [
     "You can alphabetize selected text lines with {{ 'sort-lines:sort' | keystroke }}"
   ],
-  "activationCommands": {
-    "lumine-text-editor": [
-      "sort-lines:sort",
-      "sort-lines:case-insensitive-sort",
-      "sort-lines:natural",
-      "sort-lines:reverse-sort",
-      "sort-lines:by-length",
-      "sort-lines:shuffle",
-      "sort-lines:reverse",
-      "sort-lines:unique"
-    ]
-  },
   "scripts": {
     "test": "lumine --test spec",
     "lint": "eslint . --max-warnings 0",
