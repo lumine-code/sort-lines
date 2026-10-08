@@ -2,6 +2,8 @@
 
 Sort, reverse, shuffle, and deduplicate text lines.
 
+Fork of [pulsar-edit/sort-lines](https://github.com/pulsar-edit/sort-lines).
+
 Commands operate on every non-empty selection, or on the entire buffer when nothing is selected.
 
 ## Features
