@@ -97,6 +97,101 @@ describe("sort-lines", () => {
       expect(editor.getText()).toBe("a\nmiddle\nb\nend");
     });
 
+    it("reverses overlapping expanded line ranges once without splitting their text", () => {
+      editor.setText("aa\nbb\nlongtail");
+      editor.setSelectedBufferRanges([
+        [
+          [0, 0],
+          [1, 1],
+        ],
+        [
+          [1, 2],
+          [2, 4],
+        ],
+      ]);
+      expect(editor.getSelections().length).toBe(2);
+
+      dispatch("reverse");
+
+      expect(editor.getText()).toBe("longtail\nbb\naa");
+    });
+
+    it("deduplicates each line in an overlapping selection only once", () => {
+      editor.setText("a\nbb\nbb\nbb\nz");
+      editor.setSelectedBufferRanges([
+        [
+          [0, 0],
+          [1, 1],
+        ],
+        [
+          [1, 2],
+          [3, 1],
+        ],
+      ]);
+
+      dispatch("unique");
+
+      expect(editor.getText()).toBe("a\nbb\nz");
+    });
+
+    it("keeps adjacent line blocks independent", () => {
+      editor.setText("b\naa\nd\ncc\nend");
+      editor.setSelectedBufferRanges([
+        [
+          [0, 1],
+          [1, 1],
+        ],
+        [
+          [2, 1],
+          [3, 1],
+        ],
+      ]);
+
+      dispatch("sort");
+
+      expect(editor.getText()).toBe("aa\nb\ncc\nd\nend");
+    });
+
+    it("preserves the final newline and CRLF while merging overlapping ranges", () => {
+      editor.setText("aa\r\nbb\r\nlongtail\r\n");
+      editor.setSelectedBufferRanges([
+        [
+          [0, 0],
+          [1, 1],
+        ],
+        [
+          [1, 2],
+          [3, 0],
+        ],
+      ]);
+
+      dispatch("reverse");
+
+      expect(editor.getText()).toBe("longtail\r\nbb\r\naa\r\n");
+    });
+
+    it("restores text and disjoint selections with one undo after merging line ranges", () => {
+      const original = "aa\nbb\nlongtail\nend";
+      editor.setText(original);
+      editor.setSelectedBufferRanges([
+        [
+          [0, 0],
+          [1, 1],
+        ],
+        [
+          [1, 2],
+          [2, 4],
+        ],
+      ]);
+      const selections = editor.getSelectedBufferRanges();
+
+      dispatch("reverse");
+      editor.undo();
+
+      expect(editor.getText()).toBe(original);
+      expect(editor.getSelectedBufferRanges()).toEqual(selections);
+    });
+
     it("groups changes to multiple selections into one undo step", () => {
       const originalText = "a\na\nmiddle\nb\nb\nend";
       editor.setText(originalText);
