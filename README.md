@@ -18,7 +18,9 @@ Commands operate on every non-empty selection, or on the entire buffer when noth
 
 ## Demo
 
-![Naturally sort numbered chapter names, then remove duplicate lines.](.github/demo.gif)
+![Naturally sort numbered chapter names, then remove duplicate lines.](.github/demo.png)
+
+![Naturally sort numbered chapter names, then remove duplicate lines.](.github/demo-2.png)
 
 ## Installation
 
