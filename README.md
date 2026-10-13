@@ -16,8 +16,6 @@ Commands operate on every non-empty selection, or on the entire buffer when noth
 - **Duplicate removal**: remove repeated text while retaining the first occurrence.
 - **Multiple selections**: process each selected group independently.
 
-## Demo
-
 ![Naturally sort numbered chapter names, then remove duplicate lines.](.github/demo.png)
 
 ![Naturally sort numbered chapter names, then remove duplicate lines.](.github/demo-2.png)
