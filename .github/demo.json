@@ -2,7 +2,9 @@
   "title": "sort-lines",
   "description": "Naturally sort numbered chapter names, then remove duplicate lines.",
   "recordedOn": "2026-10-13",
-  "sourceRevision": "08fd3f1048e76d6e9d9180ebb293269eba565681",
+  "sourceRevision": "886e548f60c640cf2ec28e1e8090cc64d885094e",
+  "mode": "normal",
+  "fontSettings": "default",
   "images": [
     {
       "file": "demo.png",
