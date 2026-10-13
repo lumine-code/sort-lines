@@ -8,35 +8,51 @@
           "submenu": [
             {
               "label": "Sort",
-              "command": "sort-lines:sort"
+              "command": "sort-lines:sort",
+              "group": "sorting",
+              "order": 10
             },
             {
               "label": "Sort Ignoring Case",
-              "command": "sort-lines:case-insensitive-sort"
+              "command": "sort-lines:case-insensitive-sort",
+              "group": "sorting",
+              "order": 20
             },
             {
               "label": "Sort in Natural Order",
-              "command": "sort-lines:natural"
+              "command": "sort-lines:natural",
+              "group": "sorting",
+              "order": 30
             },
             {
               "label": "Sort in Reverse",
-              "command": "sort-lines:reverse-sort"
+              "command": "sort-lines:reverse-sort",
+              "group": "sorting",
+              "order": 40
             },
             {
               "label": "Sort by Length",
-              "command": "sort-lines:by-length"
+              "command": "sort-lines:by-length",
+              "group": "sorting",
+              "order": 50
             },
             {
               "label": "Reverse Current Order",
-              "command": "sort-lines:reverse"
+              "command": "sort-lines:reverse",
+              "group": "sorting",
+              "order": 60
             },
             {
               "label": "Shuffle",
-              "command": "sort-lines:shuffle"
+              "command": "sort-lines:shuffle",
+              "group": "sorting",
+              "order": 70
             },
             {
               "label": "Remove Duplicates",
-              "command": "sort-lines:unique"
+              "command": "sort-lines:unique",
+              "group": "sorting",
+              "order": 80
             }
           ]
         }
