@@ -1,0 +1,11 @@
+{
+  "title": "sort-lines",
+  "description": "Naturally sort numbered chapter names, then remove duplicate lines.",
+  "recordedOn": "2026-10-13",
+  "sourceRevision": "ba382e76c83f1584524293fa6db3c9f25405d578",
+  "gif": "demo.gif",
+  "poster": "demo.webp",
+  "width": 960,
+  "height": 400,
+  "frames": 4
+}

@@ -16,6 +16,10 @@ Commands operate on every non-empty selection, or on the entire buffer when noth
 - **Duplicate removal**: remove repeated text while retaining the first occurrence.
 - **Multiple selections**: process each selected group independently.
 
+## Demo
+
+![Naturally sort numbered chapter names, then remove duplicate lines.](.github/demo.gif)
+
 ## Installation
 
 To install `sort-lines` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/sort-lines`.
