@@ -1,22 +1,68 @@
 {
   "title": "sort-lines",
   "description": "Naturally sort numbered chapter names, then remove duplicate lines.",
-  "recordedOn": "2026-10-13",
-  "sourceRevision": "886e548f60c640cf2ec28e1e8090cc64d885094e",
+  "recordedOn": "2026-10-14",
+  "sourceRevision": "8cc8813b637dc9c3a68d10b83881b167e10609b2",
+  "themeSourceRevision": "7fbd047a87ecf1367c896b19ff270cdc28d319f7",
   "mode": "normal",
   "fontSettings": "default",
+  "scenario": "demo.js",
+  "recipeHash": "47d0121d5a2a95c3e730df85502042d18f771faad69a70c0fdbf8f6a8644b74b",
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "electron": "44.7.0",
+    "chrome": "152.0.7977.130",
+    "devicePixelRatio": 1,
+    "locale": "en-GB",
+    "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
+    "fontSize": 14,
+    "themes": ["one-day-syntax", "one-day-ui"]
+  },
+  "viewport": { "width": 960, "height": 400 },
+  "cornerRadius": 10,
+  "sources": {
+    "editor": {
+      "revision": "d0b1751fffac65f10a405545e5f01cf7ad05c0bb",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "package": {
+      "revision": "8cc8813b637dc9c3a68d10b83881b167e10609b2",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "sort-lines": {
+      "revision": "8cc8813b637dc9c3a68d10b83881b167e10609b2",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "one-theme": {
+      "revision": "7fbd047a87ecf1367c896b19ff270cdc28d319f7",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "fixtures": [
+    {
+      "file": "chapters.txt",
+      "sha256": "82b4d72a077d120c509308293478182f1b2e2558b5a53880c5ce08cfeb30d59d"
+    }
+  ],
   "images": [
     {
       "file": "demo.png",
       "label": "Naturally sort numbered chapter names, then remove duplicate lines.",
       "width": 960,
-      "height": 400
+      "height": 400,
+      "sha256": "28854589f043a447630b7f5da9b4000c1cb652a3bd9c32f4312d2a651b2b6e61"
     },
     {
       "file": "demo-2.png",
       "label": "Naturally sort numbered chapter names, then remove duplicate lines.",
       "width": 960,
-      "height": 400
+      "height": 400,
+      "sha256": "4aeff45ac0eac2acbf52e16b1a0835b37494c556c70b82035fa319303f3784aa"
     }
   ]
 }
