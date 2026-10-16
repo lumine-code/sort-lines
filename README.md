@@ -26,7 +26,7 @@ To install `sort-lines` search for it in the Install pane of the Lumine settings
 
 ## Commands
 
-Commands available in `lumine-workspace`:
+Commands available in `lumine-text-editor:not([mini]):not([readonly])`:
 
 - `sort-lines:sort`: sort alphabetically,
 - `sort-lines:case-insensitive-sort`: sort alphabetically while ignoring case,
