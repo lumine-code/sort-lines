@@ -2,8 +2,6 @@ describe("sort-lines", () => {
   let editor;
 
   beforeEach(async () => {
-    // The commands are registered on lumine-workspace, so an editor a dispatch is
-    // aimed at has to be inside the workspace rather than an orphan element.
     jasmine.attachToDOM(lumine.workspace.getElement());
     editor = await lumine.workspace.open();
     const activation = lumine.packages.activatePackage("sort-lines");
@@ -21,6 +19,20 @@ describe("sort-lines", () => {
     dispatch(commandName);
     return editor.getText();
   }
+
+  it("requires an editable document target instead of forwarding from another surface", () => {
+    const workspace = lumine.workspace.getElement();
+    editor.setText("b\na");
+    lumine.commands.dispatch(workspace, "sort-lines:sort");
+    expect(editor.getText()).toBe("b\na");
+    expect(lumine.commands.canDispatch(workspace, "sort-lines:sort")).toBe(false);
+    const mini = lumine.workspace.buildTextEditor({ mini: true });
+    workspace.appendChild(mini.getElement());
+    expect(lumine.commands.canDispatch(mini.getElement(), "sort-lines:sort")).toBe(false);
+    mini.destroy();
+    editor.setReadOnly(true);
+    expect(lumine.commands.canDispatch(editor.getElement(), "sort-lines:sort")).toBe(false);
+  });
 
   describe("target ranges", () => {
     it("processes the entire buffer when no text is selected", () => {
