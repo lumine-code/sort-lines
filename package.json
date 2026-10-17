@@ -18,7 +18,8 @@
   "files": [
     "lib",
     "menus",
-    "spec"
+    "spec",
+    "THIRD_PARTY_NOTICES"
   ],
   "version": "1.0.0",
   "license": "MIT",
