@@ -40,6 +40,12 @@
                   "order": 50
                 },
                 {
+                  "label": "Sort by Unicode Code Units",
+                  "command": "sort-lines:lexical",
+                  "group": "sort",
+                  "order": 60
+                },
+                {
                   "label": "Reverse Current Order",
                   "command": "sort-lines:reverse",
                   "group": "transform",
@@ -91,6 +97,10 @@
             {
               "label": "Sort by Length",
               "command": "sort-lines:by-length"
+            },
+            {
+              "label": "Sort by Unicode Code Units",
+              "command": "sort-lines:lexical"
             },
             {
               "type": "separator"

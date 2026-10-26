@@ -10,6 +10,7 @@ Commands operate on every non-empty selection, or on the entire buffer when noth
 
 - **Alphabetic ordering**: sort text with case-sensitive or case-insensitive comparison.
 - **Natural ordering**: order embedded numbers by their numeric values.
+- **Unicode code-unit ordering**: compare exact source text, including lines beyond the runtime string limit.
 - **Length ordering**: arrange text from shortest to longest.
 - **Reverse ordering**: sort descending or reverse the current order.
 - **Random ordering**: shuffle text into a random order.
@@ -32,10 +33,17 @@ Commands available in `lumine-text-editor:not([mini]):not([readonly])`:
 - `sort-lines:case-insensitive-sort`: sort alphabetically while ignoring case,
 - `sort-lines:natural`: sort embedded numbers by numeric value,
 - `sort-lines:reverse-sort`: sort alphabetically in descending order,
+- `sort-lines:lexical`: sort by exact UTF-16 code-unit order,
 - `sort-lines:by-length`: sort from shortest to longest,
 - `sort-lines:shuffle`: shuffle into a random order,
 - `sort-lines:reverse`: reverse the current order,
 - `sort-lines:unique`: remove duplicate text.
+
+## Large documents
+
+Large selections retain immutable line ranges and compact row indices while preparing the transformation in cooperative slices. Locale/natural sorting keeps the existing comparison semantics and uses a bounded line cache; an individual line exceeding the runtime string limit cannot be passed to those native comparators and produces an explicit error. Unicode code-unit sorting, reverse, duplicate removal, length sorting and shuffle operate on source chunks at any line length. No command truncates selected text or silently changes its comparison mode.
+
+Edits publish together only if the document and selections are unchanged. A newer transformation or package deactivation cancels pending preparation. Undo restores the original source.
 
 ## Contributing
 
